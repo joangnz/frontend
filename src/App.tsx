@@ -1,14 +1,20 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import Login from "./components/Login";
 
 function App() {
+  const [token, setToken] = useState<string | null>(null);
+
+  const handleLoginSuccess = (receivedToken: string) => {
+    localStorage.setItem("token", receivedToken);
+    setToken(receivedToken);
+  }
+
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justifycenter">
-      <h1 className="text-3xl font-bold text-blue-600">
-        ¡Hola, Tailwind CSS v4 en React!
-      </h1>
+    <div className="min-h-screen bg-gray-100 p-4">
+      {!token ? (<Login onLoginSuccess={handleLoginSuccess} />) : (
+        <p className="text-xl">You are logged in. Token: {token}</p>
+      )}
     </div>
   );
 }
