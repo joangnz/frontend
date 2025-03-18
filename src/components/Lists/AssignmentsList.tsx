@@ -28,10 +28,11 @@ export default function AssignmentsList() {
     return (
         <div className="mt-4">
             <h2 className="text-2xl font-bold mb-2">Tareas</h2>
+            {error && <p className="text-red-500">{error}</p>}
             <ul className="space-y-2">
                 {assignments.map((assignment) => (
-                    <li key={assignment.id} className="p-2 border rounded bgwhite shadow">
-                        <strong>{assignment.title}</strong>
+                    <li key={assignment.id} className="p-2 border rounded bg-white shadow">
+                        <strong>{assignment.title}</strong> - Fecha de entrega: {assignment.due_date}
                     </li>
                 ))}
             </ul>
