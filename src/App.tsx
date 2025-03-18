@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
 
 // Components
+import ProtectedRoute from "./components/ProtectedRoute";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 
@@ -20,14 +21,14 @@ import MessageList from "./components/Lists/MessagesList";
 import "./App.css";
 
 function App() {
-  const [token, setToken] = useState<string | null>(null);
-  const [id, setId] = useState<string | null>(null);
+  const [token, setToken] = useState<string | null>(localStorage.getItem("token"));
+  const [userId, setUserId] = useState<string | null>(localStorage.getItem("userId"));
 
   const handleLoginSuccess = (receivedToken: string, receivedId: string) => {
     localStorage.setItem("token", receivedToken);
     localStorage.setItem("userId", receivedId);
     setToken(receivedToken);
-    setId(receivedId);
+    setUserId(receivedId);
   }
 
   const handleLogout = () => {
@@ -45,7 +46,7 @@ function App() {
         localStorage.removeItem("token");
         setToken(null);
         localStorage.removeItem("userId");
-        setId(null);
+        setUserId(null);
       })
       .catch((err) => console.error(err));
   }
