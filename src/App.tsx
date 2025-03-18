@@ -8,10 +8,13 @@ import AssignmentsList from "./components/Lists/AssignmentsList";
 
 function App() {
   const [token, setToken] = useState<string | null>(null);
+  const [id, setId] = useState<string | null>(null);
 
-  const handleLoginSuccess = (receivedToken: string) => {
+  const handleLoginSuccess = (receivedToken: string, receivedId: string) => {
     localStorage.setItem("token", receivedToken);
+    localStorage.setItem("userId", receivedId);
     setToken(receivedToken);
+    setId(receivedId);
   }
 
   const handleLogout = () => {
@@ -37,6 +40,7 @@ function App() {
       {token ? (
         <div>
           <p className="text-xl">Token: {token}</p>
+          <p className="text-xl">ID: {id}</p>
           <LogoutButton onLogout={handleLogout} />
           <CoursesList />
           <AssignmentsList />

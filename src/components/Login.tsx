@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 interface LoginProps {
-    onLoginSuccess: (token: string) => void;
+    onLoginSuccess: (token: string, id: string) => void;
 }
 
 export default function Login({ onLoginSuccess }: LoginProps) {
@@ -26,7 +26,8 @@ export default function Login({ onLoginSuccess }: LoginProps) {
             })
             .then((data) => {
                 // data.token y data.user vendrán del backend
-                onLoginSuccess(data.token);
+                onLoginSuccess(data.token, data.user.id);
+                console.log(data);
             })
             .catch((err) => {
                 setError(err.message);
