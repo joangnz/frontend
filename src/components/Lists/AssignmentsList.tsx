@@ -1,39 +1,24 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface Assignment {
     id: number;
     title: string;
-    description: string;
     due_date: string;
     subject_id: number;
-    created_at: string;
-    updated_at: string;
 }
-
 export default function AssignmentsList() {
     const [assignments, setAssignments] = useState<Assignment[]>([]);
     const [error, setError] = useState("");
+
     useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (!token) {
-            setError("No token found. Please log in.");
-            return;
-        }
         fetch("http://127.0.0.1:8000/api/assignments", {
             headers: {
-                Authorization: "Bearer " + token,
+                Authorization: "Bearer " + localStorage.getItem("token"),
             },
         })
-            .then((res) => {
-                if (!res.ok) {
-                    throw new Error("Failed to fetch assignments");
-                }
-                return res.json();
-            })
-            .then((data: Assignment[]) => {
-                setAssignments(data);
-            })
-            .catch((err) => setError(err.message));
+            .then((res) => res.json())
+            .then((data) => setAssignments(data))
+            .catch(() => setError("Error al obtener las tareas"));
     }, []);
 
     if (error) {
@@ -46,7 +31,7 @@ export default function AssignmentsList() {
             <ul className="space-y-2">
                 {assignments.map((assignment) => (
                     <li key={assignment.id} className="p-2 border rounded bgwhite shadow">
-                        <strong>{assignment.title}</strong> - {assignment.description}
+                        <strong>{assignment.title}</strong>
                     </li>
                 ))}
             </ul>
