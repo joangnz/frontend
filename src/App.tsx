@@ -3,6 +3,9 @@ import "./App.css";
 import Login from "./components/Login";
 import LogoutButton from "./components/LogoutButton";
 
+import CoursesList from "./components/Lists/CoursesList";
+import AssignmentsList from "./components/Lists/AssignmentsList";
+
 function App() {
   const [token, setToken] = useState<string | null>(null);
 
@@ -31,8 +34,15 @@ function App() {
 
   return (
     <div className="bg-gray-100 p-4">
-      {!token ? (<Login onLoginSuccess={handleLoginSuccess} />) : (
-        <p className="text-xl">You are logged in. Token: {token}</p>
+      {token ? (
+        <div>
+          <p className="text-xl">Token: {token}</p>
+          <LogoutButton onLogout={handleLogout} />
+          <CoursesList />
+          <AssignmentsList />
+        </div>
+      ) : (
+        <Login onLoginSuccess={handleLoginSuccess} />
       )}
     </div>
   );
