@@ -42,7 +42,7 @@ export default function AssignmentsList() {
 
     return (
         <div className="mt-4">
-            <h2 className="text-2xl font-bold mb-2">Assignments</h2>
+            <h2 className="text-2xl font-bold mb-2">Tareas</h2>
             <ul className="space-y-2">
                 {assignments.map((assignment) => (
                     <li key={assignment.id} className="p-2 border rounded bgwhite shadow">
