@@ -1,10 +1,17 @@
 import { useState } from "react";
 import "./App.css";
+
+// Authentication
 import Login from "./components/Login";
 import LogoutButton from "./components/LogoutButton";
+import Register from "./components/Register";
 
+// Lists
 import CoursesList from "./components/Lists/CoursesList";
+import SubjectsList from "./components/Lists/SubjectsList";
 import AssignmentsList from "./components/Lists/AssignmentsList";
+import SubmissionsList from "./components/Lists/SubmissionsList";
+import MessageList from "./components/Lists/MessagesList";
 
 function App() {
   const [token, setToken] = useState<string | null>(null);
