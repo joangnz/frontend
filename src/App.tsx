@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-ro
 
 // Components
 import Navbar from "./components/Navbar";
+import Dashboard from "./components/Dashboard";
 
 // Authentication
 import Login from "./components/Login";
@@ -54,8 +55,7 @@ function App() {
       <div className="min-h-screen bg-gray-100 p-4">
         {!token ? (
           <Routes>
-            <Route path="/" element={<Login
-              onLoginSuccess={handleLoginSuccess} />} />
+            <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
@@ -65,9 +65,10 @@ function App() {
             <Navbar onLogout={handleLogout} />
             <div className="p-4">
               <Routes>
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/courses" element={<CoursesList />} />
                 <Route path="/subjects" element={<SubjectsList />} />
-                <Route path="/assignments" element={<AssignmentsList />}/>
+                <Route path="/assignments" element={<AssignmentsList />} />
                 <Route path="/submissions" element={<SubmissionsList />} />
                 <Route path="/messages" element={<MessageList />} />
                 <Route path="*" element={<Navigate to="/courses" />} />
