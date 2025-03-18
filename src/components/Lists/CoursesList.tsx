@@ -22,7 +22,7 @@ export default function CoursesList() {
         })
             .then((res) => {
                 if (!res.ok) {
-                    throw new Error("Failed to fetch courses");
+                    throw new Error("Error al obtener los cursos");
                 }
                 return res.json();
             })
@@ -38,7 +38,7 @@ export default function CoursesList() {
 
     return (
         <div className="mt-4">
-            <h2 className="text-2xl font-bold mb-2">Courses</h2>
+            <h2 className="text-2xl font-bold mb-2">Cursos</h2>
             <ul className="space-y-2">
                 {courses.map((course) => (
                     <li key={course.id} className="p-2 border rounded bgwhite shadow">
