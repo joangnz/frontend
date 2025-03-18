@@ -21,7 +21,7 @@ export default function Register() {
         <div className="max-w-sm mx-auto bg-white p-4 rounded shadow">
             <h2 className="text-xl font-bold mb-4">Registro</h2>
             {message && <p className="text-green-500">{message}</p>}
-            <form onSubmit={handleSubmit} className="flex flex-col spacey-3">
+            <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
                 <input
                     type="text"
                     placeholder="Nombre"
