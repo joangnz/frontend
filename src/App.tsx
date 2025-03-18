@@ -38,24 +38,34 @@ function App() {
     .then(() => {
       localStorage.removeItem("token");
       setToken(null);
+      localStorage.removeItem("userId");
+      setId(null);
     })
     .catch((err) => console.error(err));
   }
 
   return (
-    <div className="bg-gray-100 p-4">
-      {token ? (
-        <div>
-          <p className="text-xl">Token: {token}</p>
-          <p className="text-xl">ID: {id}</p>
-          <LogoutButton onLogout={handleLogout} />
-          <CoursesList />
-          <AssignmentsList />
-        </div>
+    <div className="min-h-screen bg-gray-100 p-4">
+      {!token ? (
+        <>
+          <Login onLoginSuccess={handleLoginSuccess} />
+          <Register />
+        </>
       ) : (
-        <Login onLoginSuccess={handleLoginSuccess} />
+        <div>
+          <p className="text-xl">Bienvenido a Laredu</p>
+          <LogoutButton onLogout={handleLogout} />
+
+          {/* Módulos del sistema */}
+          <CoursesList />
+          <SubjectsList />
+          <AssignmentsList />
+          <SubmissionsList />
+          <MessageList />
+        </div>
       )}
     </div>
   );
 }
+
 export default App;
