@@ -6,6 +6,7 @@ interface Assignment {
     due_date: string;
     subject_id: number;
 }
+
 export default function AssignmentsList() {
     const [assignments, setAssignments] = useState<Assignment[]>([]);
     const [error, setError] = useState("");
@@ -20,10 +21,6 @@ export default function AssignmentsList() {
             .then((data) => setAssignments(data))
             .catch(() => setError("Error al obtener las tareas"));
     }, []);
-
-    if (error) {
-        return <p className="text-red-500">{error}</p>
-    }
 
     return (
         <div className="mt-4">
