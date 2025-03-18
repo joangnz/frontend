@@ -56,7 +56,7 @@ function App() {
           <p className="text-xl">Bienvenido a Laredu</p>
           <LogoutButton onLogout={handleLogout} />
 
-          {/* Módulos del sistema */}
+          {/* Lists */}
           <CoursesList />
           <SubjectsList />
           <AssignmentsList />
