@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
+
+// Components
+import Navbar from "./components/Navbar";
+
 // Authentication
 import Login from "./components/Login";
 import LogoutButton from "./components/LogoutButton";
@@ -58,24 +62,13 @@ function App() {
         ) : (
           <>
             {/* Navbar de navegación */}
-            <nav className="bg-blue-600 text-white p-4 flex justifybetween">
-              <div className="flex space-x-4">
-                <Link to="/courses">Cursos</Link>
-                <Link to="/subjects">Asignaturas</Link>
-                <Link to="/assignments">Tareas</Link>
-                <Link to="/submissions">Entregas</Link>
-                <Link to="/messages">Mensajes</Link>
-              </div>
-              <LogoutButton onLogout={handleLogout} />
-            </nav>
+            <Navbar onLogout={handleLogout} />
             <div className="p-4">
               <Routes>
                 <Route path="/courses" element={<CoursesList />} />
                 <Route path="/subjects" element={<SubjectsList />} />
-                <Route path="/assignments" element={<AssignmentsList />}
-                />
-                <Route path="/submissions" element={<SubmissionsList />}
-                />
+                <Route path="/assignments" element={<AssignmentsList />}/>
+                <Route path="/submissions" element={<SubmissionsList />} />
                 <Route path="/messages" element={<MessageList />} />
                 <Route path="*" element={<Navigate to="/courses" />} />
               </Routes>
