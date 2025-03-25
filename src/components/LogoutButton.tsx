@@ -1,10 +1,12 @@
+import "./LogoutButton.css"
+
 interface LogoutButtonProps {
     onLogout: () => void;
 }
 
 export default function LogoutButton({ onLogout }: LogoutButtonProps) {
     return (
-        <button onClick={onLogout} className="bg-red-600 text-white p-2 rounded hover:bg-red-500" >
+        <button id="logoutButton" onClick={onLogout} className="" >
             Logout
         </button>
     )
