@@ -12,7 +12,10 @@ export default function Navbar({ onLogout }: NavbarProps) {
     return (
         <nav id="nav" className="text-white p-4 flex justify-between items-center shadow-lg">
             <div className="flex items-center gap-8">
-                <Link className="text-2xl font-bold" to="/">📚 Laredu</Link>
+                <div id="home-holder" className="flex">
+                    <img id="home-logo" src="/favicon.png" alt="" />
+                    <Link className="text-2xl font-bold" to="/">Laredu</Link>
+                </div>
                 <Link className="hover:text-gray-300" to="/courses">Cursos</Link>
                 <Link className="hover:text-gray-300" to="/subjects">Asignaturas</Link>
                 <Link className="hover:text-gray-300" to="/assignments">Tareas</Link>

@@ -1,3 +1,24 @@
 #nav {
     background-color: var(--dark);
+
+    #home-logo {
+        height: 2rem;
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 796px) {
+    #nav, #nav > div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #home-holder {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #logoutButton {
+        margin-top: 20px;
+    }
 }
