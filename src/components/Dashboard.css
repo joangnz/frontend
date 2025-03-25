@@ -1,0 +1,12 @@
+#dashboard {
+    a {
+        color: var(--dark);
+    }
+}
+
+@media screen and (max-width: 796px) {
+    #dashboard div.grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
