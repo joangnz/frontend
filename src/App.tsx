@@ -53,7 +53,7 @@ function App() {
 
   return (
     <Router>
-      <div className="min-h-screen bg-gray-100 p-4">
+      <main id="main" className="min-h-screen bg-gray-100 p-4">
         {!token ? (
           <Routes>
             <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
@@ -77,7 +77,7 @@ function App() {
             </div>
           </>
         )}
-      </div>
+      </main>
     </Router>
   );
 }
