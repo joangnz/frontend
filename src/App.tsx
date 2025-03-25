@@ -69,9 +69,9 @@ function App() {
                 <Route path="/" element={<Dashboard />} />
                 <Route path="/courses" element={<ProtectedRoute token={token}><CoursesList /></ProtectedRoute>} />
                 <Route path="/subjects" element={<ProtectedRoute token={token}><SubjectsList /></ProtectedRoute>} />
-                  <Route path="/assignments" element={<ProtectedRoute token={token}><AssignmentsList /></ProtectedRoute>} />
-                  <Route path="/submissions" element={<ProtectedRoute token={token}><SubmissionsList /></ProtectedRoute>} />
-                  <Route path="/messages" element={<ProtectedRoute token={token}><MessageList /></ProtectedRoute>} />
+                <Route path="/assignments" element={<ProtectedRoute token={token}><AssignmentsList /></ProtectedRoute>} />
+                <Route path="/submissions" element={<ProtectedRoute token={token}><SubmissionsList /></ProtectedRoute>} />
+                <Route path="/messages" element={<ProtectedRoute token={token}><MessageList /></ProtectedRoute>} />
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </div>
