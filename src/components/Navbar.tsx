@@ -11,8 +11,8 @@ interface NavbarProps {
 export default function Navbar({ onLogout }: NavbarProps) {
     return (
         <nav id="nav" className="text-white p-4 flex justify-between items-center shadow-lg">
-            <div className="flex items-center space-x-4">
-                <span className="text-2xl font-bold">📚 Laredu</span>
+            <div className="flex items-center gap-8">
+                <Link className="text-2xl font-bold" to="/">📚 Laredu</Link>
                 <Link className="hover:text-gray-300" to="/courses">Cursos</Link>
                 <Link className="hover:text-gray-300" to="/subjects">Asignaturas</Link>
                 <Link className="hover:text-gray-300" to="/assignments">Tareas</Link>
