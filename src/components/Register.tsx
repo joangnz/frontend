@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import "./Log.css";
+import "./Register.css";
+
 export default function Register() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -18,7 +23,7 @@ export default function Register() {
     };
 
     return (
-        <div className="max-w-sm mx-auto bg-white p-4 rounded shadow">
+        <div id="register" className="log max-w-sm mx-auto p-4 rounded shadow">
             <h2 className="text-xl font-bold mb-4">Registro</h2>
             {message && <p className="text-green-500">{message}</p>}
             <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
@@ -55,6 +60,7 @@ export default function Register() {
                     Registrarse
                 </button>
             </form>
+            <p>¿Ya tienes cuenta? <Link to="/">¡Inicia Sesión!</Link></p>
         </div>
     );
 } 

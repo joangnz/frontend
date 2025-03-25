@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import "./Log.css";
+import "./Login.css";
 
 interface LoginProps {
     onLoginSuccess: (token: string, id: string) => void;
@@ -35,7 +39,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
     };
 
     return (
-        <div className="max-w-sm mx-auto bg-white p-4 rounded shadow">
+        <div id="login" className="log max-w-sm mx-auto p-4 rounded shadow">
             <h2 className="text-xl font-bold mb-4">Login</h2>
             {error && <p className="text-red-500 mb-2">{error}</p>}
             <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
@@ -57,6 +61,8 @@ export default function Login({ onLoginSuccess }: LoginProps) {
                     Login
                 </button>
             </form>
+
+            <p>¿No tienes cuenta? <Link to="/register">¡Registrate!</Link></p>
         </div>
     );
 }
