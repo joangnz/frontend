@@ -1,5 +1,8 @@
 export default function GuestHeader() {
     return (
-        <div>GuestHeader</div>
+        <div className="flex">
+            <img src="/favicon.png" className="logo" alt="" />
+            <h1>Laredu</h1>
+        </div>
     );
 }

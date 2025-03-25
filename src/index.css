@@ -83,3 +83,8 @@ button:focus-visible {
     background-color: var(--light);
   }
 }
+/* 
+img.text-logo {
+  height: 2rem;
+  display: inline-block;
+} */
