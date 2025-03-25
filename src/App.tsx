@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-ro
 
 // Components
 import ProtectedRoute from "./components/ProtectedRoute";
+import GuestHeader from "./components/GuestHeader";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 
@@ -55,11 +56,15 @@ function App() {
     <Router>
       <main id="main" className="min-h-screen bg-gray-100 p-4">
         {!token ? (
-          <Routes>
-            <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
+          <>
+          <GuestHeader />
+            <Routes>
+              <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+          </>
+
         ) : (
           <>
             {/* Navbar de navegación */}
