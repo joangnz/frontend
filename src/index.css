@@ -9,6 +9,7 @@
   --red: #e63946;
   --yellow: #f4a261;
   --blue: #5241de;
+  --gray: #b0b3b8;
   --light: #f9f9f9;
 
   color-scheme: light;
@@ -69,6 +70,11 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+  background-color: var(--light);
+  font-weight: bold;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: var(--dark);
@@ -83,8 +89,7 @@ button:focus-visible {
     background-color: var(--light);
   }
 }
-/* 
-img.text-logo {
-  height: 2rem;
-  display: inline-block;
-} */
+
+.align-center {
+  align-items: center;
+}

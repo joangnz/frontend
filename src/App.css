@@ -5,11 +5,16 @@
 }
 
 #main {
-  min-width: 80vw;
+  background-color: var(--gray);
+  width: 90vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-content: start;
+  flex-wrap: wrap;
+}
+
+#main > * {
+  width: 100%;
 }
 
 .logo {

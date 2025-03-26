@@ -1,0 +1,8 @@
+#guest-header {
+    background-color: var(--dark);
+
+    #guest-logo {
+        height: 3rem;
+        display: inline-block;
+    }
+}
