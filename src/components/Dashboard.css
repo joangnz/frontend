@@ -1,5 +1,7 @@
 #dashboard {
     a {
+        height: 100px;
+        align-content: center;
         color: var(--dark);
     }
 }

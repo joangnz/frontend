@@ -70,7 +70,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+input, select {
   background-color: var(--light);
   font-weight: bold;
 }
