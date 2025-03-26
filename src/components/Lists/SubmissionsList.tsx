@@ -43,7 +43,7 @@ export default function SubmissionsList() {
         <div className="mt-4">
             <h2 className="text-2xl font-bold mb-2">Entregas de Tareas</h2>
             {message && <p className="text-green-500">{message}</p>}
-            <form onSubmit={handleSubmit} className="mb-4 flex space-x2">
+            <form onSubmit={handleSubmit} className="mb-4 flex space-x-2">
                 <input
                     type="number"
                     placeholder="ID de la Tarea"

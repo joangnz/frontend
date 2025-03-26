@@ -41,7 +41,7 @@ export default function CoursesList() {
             <h2 className="text-2xl font-bold mb-2">Cursos</h2>
             <ul className="space-y-2">
                 {courses.map((course) => (
-                    <li key={course.id} className="p-2 border rounded bgwhite shadow">
+                    <li key={course.id} className="p-2 border rounded bg-white shadow">
                         <strong>{course.name}</strong> - {course.description}
                     </li>
                 ))}
